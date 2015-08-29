@@ -1,0 +1,23 @@
+@-webkit-viewport {width: device-width}
+@-moz-viewport {width: device-width}
+@-ms-viewport {width: device-width}
+@-o-viewport {width: device-width}
+@viewport {width: device-width};
+
+* {
+	max-width: 100%;
+	@include box-sizing(border-box);
+}
+
+html, body {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+body {
+	font-size: 14px;
+	@media screen and (min-width: 993px) {
+		font-size: 16px;
+	}
+}
