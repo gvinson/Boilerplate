@@ -1,0 +1,47 @@
+#mobile-nav {
+	position: fixed;
+	display: block;
+	right: -100%;
+	top: 0;
+	bottom: 0;
+	width: 75%;
+	background-color: green;
+	@include box-shadow(1px 1px 1px rgba(black, 0.5));
+	@include transition(right 0.25s ease-in-out);
+	z-index: 10;
+	@media screen and (min-width: $small-min) {
+		display: none;
+	}
+	&.open {
+		right: 0;
+	}
+}
+
+#mobile-nav-wrapper {
+	position: relative;
+	overflow-y: auto;
+	height: 100%;
+}
+
+#mobile-nav .main-nav {
+	display: block;
+	height: auto;
+	width: 100%;
+	max-width: none;
+	padding: 2em 1em;
+	background-color: transparent;
+
+	ul {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: block;
+		margin: 0.5em 0 1em;
+		padding-top: 0.5em;
+		text-align: left;
+	}
+}

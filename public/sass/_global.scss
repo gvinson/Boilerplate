@@ -1,0 +1,38 @@
+@-webkit-viewport {width: device-width}
+@-moz-viewport {width: device-width}
+@-ms-viewport {width: device-width}
+@-o-viewport {width: device-width}
+@viewport {width: device-width};
+
+* {
+	max-width: 100%;
+	@include box-sizing(border-box);
+}
+
+html, body {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+body {
+	background-color: red;
+	font-size: 14px;
+	@media screen and (min-width: 993px) {
+		font-size: 16px;
+	}
+}
+
+.wrapper {
+	width: 960px;
+	max-width: 97.5%;
+	margin: 0 auto;
+}
+
+// Move this line to a main-nav scss file, 
+// I've placed it here for simplicity reasons
+.main-nav {
+	@media screen and (max-width: $small-max) {
+		display: none;
+	}
+}
