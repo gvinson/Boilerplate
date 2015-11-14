@@ -11,7 +11,7 @@ This object uses the webshim located in the js vendor directory. It must be decl
  Easy peasy lightbox object. Requires .lightbox, .lightbox-link classes. Change them as needed though. These classes are also referenced in the scss files.  
  **MobileMenu.js**
  Handles click events for hamburger icons. Inject nav elements into a mobile-nav-wrapper.   
- #### Vendors ####
+ ####Vendors####
  **js-webshim** for form  
  **respond.js** for media queries in legacy browsers  
  **html5shiv.min** for html5 elements in legacy browsers  
@@ -19,7 +19,7 @@ This object uses the webshim located in the js vendor directory. It must be decl
  **modernizr.min.js**  
  **picturefill.min.js** for making the html5 picture element work in legacy browsers  
  
-### SCSS ###    
+###SCSS###    
 **normalize.scss** for normalizing browsers  
 **helpers.scss** for helper classes such as .mobile-only, .non-mobile and .clearfix  
 **global.scss** for global declarations site wide, such as a wrapper or html,body.  
@@ -79,7 +79,7 @@ Converts svgs into css/png and provides fallbacks and scripts.
 Documentation: https://github.com/filamentgroup/grunticon
 
 
-### SASS/SCSS
+###SASS/SCSS###
 .scss files have the same syntax as regular .css files.  
 .sass is similar but doesn't require {} or ;  
 **Please use .scss**
