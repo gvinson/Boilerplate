@@ -76,7 +76,11 @@ Documentation: https://github.com/filamentgroup/grunt-criticalcss
 
 **"grunt-grunticon": "^2.2.2"**  
 Converts svgs into css/png and provides fallbacks and scripts.  
-Documentation: https://github.com/filamentgroup/grunticon
+Documentation: https://github.com/filamentgroup/grunticon  
+
+To install all packages, make sure node, npm and the grunt-cli are installed.  Once they are, in your terminal, cd into the projects directory and enter the command "npm install --save-dev". Packages may take a while to install, especially phantomJS. Give it time.  
+  
+To run all of the grunt tasks, run "grunt watch" in your terminal.
 
 
 ###SASS/SCSS###
