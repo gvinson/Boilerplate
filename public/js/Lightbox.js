@@ -8,7 +8,7 @@ var Lightbox = {
 	},
 
 	openLightbox : function(e) {
-		e.preventDefault();
+		e.preventDefault(); 
 		var box = $(this).attr('data-id');
 		$('.lightbox').addClass('show');
 		$('#' + box).addClass('show');
