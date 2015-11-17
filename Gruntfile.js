@@ -114,7 +114,9 @@ module.exports = function(grunt) {
 	            	// the appropriate class name
 	            	// Creates icons with the .icon-xxx class name
 	            	defaultWidth: "90px",
-	            	defaultHeight: "90px"
+	            	defaultHeight: "90px",
+	            	// Add "enhanceSVG: true" to embed svg into html
+	            	enhanceSVG: true
 	            }
 	        }
 	    },
