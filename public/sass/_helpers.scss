@@ -32,7 +32,20 @@
 .clearfix {
     *zoom: 1;
 }
-
+.caret {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    &.reversed {
+        border-top: 0;
+        border-bottom: 4px dashed;
+    }
+}
 /* ==========================================================================
    Print styles
    ========================================================================== */
