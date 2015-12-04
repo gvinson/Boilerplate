@@ -1,6 +1,10 @@
 .grid {
 	position: relative;
 	@include clearfix;
+
+	.row {
+		@include clearfix;
+	}
 	
 	[class*="col-"] {
 		float: left;
@@ -35,4 +39,11 @@
 			display: table-cell;
 		}
 	}
+}
+
+.pull-left {
+	float: left !important;
+}
+.pull-right {
+	float: right !important;
 }

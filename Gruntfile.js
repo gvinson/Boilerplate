@@ -102,12 +102,11 @@ grunt.initConfig({
 	        files: [ 'public/scss/*.scss' ],
 	        tasks: ['compass:dist','cmq:dist', 'cssmin:dist', 'criticalcss:subpage','cssmin:subcritical', 'criticalcss:home', 'cssmin:homecritical']
 	    },
-
 	    // Watches svg icons
 	    icons: {
 	    	files: [ 'public/img/original-svgs/*.svg'],
 	    	tasks: ['grunticon']
-	    },
+	    }
     },
 
     /**
