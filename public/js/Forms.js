@@ -67,16 +67,17 @@ var Forms = {
 	submitForm : function(e) {
 		e.preventDefault();
 
-		var submitBtn = $(this).find('input[type=submit]');
+		var form = $(this);
+		var submitBtn = form.find('input[type=submit]');
 		var response = $("<span />").addClass("response");
 
 		Response.createTag(submitBtn);
 	
 		$.ajax({
-			url : $(this).attr('action'),
-			type : $(this).attr('method'),
+			url : form.attr('action'),
+			type : form.attr('method'),
 			dataType : 'json',
-			data : $(this).serialize(),
+			data : form.serialize(),
 		})
 		.done( function(data) 
 		{
@@ -85,9 +86,6 @@ var Forms = {
 			if (data.success) 
 			{
 				Response.showSuccess(submitBtn);
-				setTimeout(function() {
-					$(".schedule-visit-holder.show").removeClass('show');
-				}, 1500);
 			} 
 			else 
 			{

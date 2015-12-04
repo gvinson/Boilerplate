@@ -1,3 +1,11 @@
+/**
+ * MobileMenu required elements:
+ * - element with class of main-nav
+ * - a hamburger element, a div with id of hamburger
+ * - a mobile nav element that will cover screen
+ * - mobile nav wrapper that holds elements inside nav (allows scrolling with css)
+ */
+
 var MobileMenu = {
 
 	// make reference for all nav elements you
@@ -34,13 +42,10 @@ var MobileMenu = {
 			MobileMenu.hamburger.removeClass('open');
 			MobileMenu.mobileNav.removeClass('open');
 			setTimeout(function() {
-				//MobileMenu.mobileNav.empty();
 				MobileMenu.showing = false;
 			}, 255);
 		}
 	},
 };
 
-$(document).on('ready', function() {
-	MobileMenu.init();
-});
+$(document).on('ready', MobileMenu.init());

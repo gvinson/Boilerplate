@@ -1,36 +1,94 @@
-Includes basic files for JS, CSS, SCSS, Grunt and an HTML boilerplate
+## What's in this repo?
+Files for JS, CSS, SCSS, Grunt and an HTML boilerplate
 
-# INCLUDED FILES  
+ ---  
+ &nbsp;
+# Included Javascript files
+*Customize these files as needed*   
 
-### Javascript
-*Customize these files as needed*  
 **Forms.js**  
-JS object for validating and submitting forms. Also included a Response object for the response from the form.   
-This object uses the webshim located in the js vendor directory. It must be declared for legacy browser validation to work.  
+JS object for validating and submitting forms. Also includes a Response object for the response from the form.   
+This object uses the webshim located in the js vendor directory. It must be declared for legacy browser validation to work. 
+
  **Lightbox.js**  
  Easy peasy lightbox object. Requires .lightbox, .lightbox-link classes. Change them as needed though. These classes are also referenced in the scss files.  
- **MobileMenu.js**
- Handles click events for hamburger icons. Inject nav elements into a mobile-nav-wrapper.   
-**VENDORS**  
- **js-webshim** for form  
- **respond.js** for media queries in legacy browsers  
- **html5shiv.min** for html5 elements in legacy browsers  
- **jquery-1.11**  
- **modernizr.min.js**  
- **picturefill.min.js** for making the html5 picture element work in legacy browsers  
  
-###SCSS  
-**normalize.scss** for normalizing browsers  
-**helpers.scss** for helper classes such as .mobile-only, .non-mobile and .clearfix  
-**global.scss** for global declarations site wide, such as a wrapper or html,body.  
-**grid.scss** for grid layouts such as an equal height grid or a simple grid. Uses a $totalColors sass variable that is set in vars.scss  
-**hamburger.scss** styles for a hamburger icon. Requires 4 html elements that are in this index.html file.  
-**mobile-nav.scss** has styles for a mobile navigation. Requires 2 html elements.  
-**lightbox.scss** simple styles for a basic lightbox  
-**vars.scss** for all sass variables. Place re-used colors, media query sizes, font names, and any other variables you want to create.  
-**layout.scss** imports all other scss files. Importing order does matter.  
+ **MobileMenu.js**
+ Handles click events for hamburger icons. Inject nav elements into a mobile-nav-wrapper.  
+ 
+### JavaScript vendor files  
+*These files work out of the box. No need for modifications*  
 
-# GUIDELINES  
+**js-webshim**  
+ for form  validation 
+ 
+ **respond.min.js**  
+ for media queries in legacy browsers  
+ 
+ **html5shiv.min.js**  
+ for html5 elements in legacy browsers  
+ 
+ **jquery-1.11.0.min.js**  
+ a build of jquery
+ 
+ **modernizr.min.js**  
+ support detection for browser features such as svg, canvas...included by default with webshim
+ 
+ **picturefill.min.js**  
+ for making the html5 picture element work in legacy browsers   
+ 
+ &nbsp;  
+ 
+ ---  
+ &nbsp;
+ 
+# Included SCSS files
+**_normalize.scss**  
+for normalizing browsers  
+*This file shouldn't need to be edited. It is already good to go.*
+
+**_helpers.scss**  
+for helper classes such as .mobile-only, .non-mobile and .clearfix  
+
+**_global.scss**  
+for global declarations site wide, such as a wrapper or html,body.  
+
+**_grid.scss**  
+for grid layouts such as an equal height grid or a simple grid. Uses a $totalColors sass variable that is set in vars.scss  
+
+**_hamburger.scss**  
+styles for a hamburger icon. Requires 4 html elements that are in this index.html file.  
+
+**_mobile-nav.scss**  
+has styles for a mobile navigation. Requires 2 html elements.  
+
+**_lightbox.scss**  
+simple styles for a basic lightbox  
+
+**_vars.scss**  
+for all sass variables. Place re-used colors, media query sizes, font names, and any other variables you want to create.  
+
+**layout.scss**  
+imports all other scss files. Importing order does matter.  
+
+
+### SASS guidelines
+**Create multiple files for different modules**.  
+Such as one for the hamburger, one for the main-nav, one for the mobile-nav, one for the lightbox, one for the home-hero, one for the subpage-hero, on for typography, one for the grid...  
+**Only nest selectors by 2 times.**  
+**Compass's "Best Practices"** : http://compass-style.org/help/tutorials/best_practices/
+
+### Compiling SCSS files into one
+Separated files that need to be imported must be prefixed with "_", for example:  
+_hamburger.scss  
+Then, in the layout.scss file, @import "hamburger"; for all .scss files.  
+
+ &nbsp;  
+ 
+ ---  
+ &nbsp; 
+
+# GRUNT
 ### package.json File and Grunt Tasks
 Included packages:  
 **"grunt": "~0.4.2"**  
@@ -78,21 +136,23 @@ Documentation: https://github.com/filamentgroup/grunt-criticalcss
 Converts svgs into css/png and provides fallbacks and scripts.  
 Documentation: https://github.com/filamentgroup/grunticon  
 
-To install all packages, make sure node, npm and the grunt-cli are installed.  Once they are, in your terminal, cd into the projects directory and enter the command "npm install --save-dev". Packages may take a while to install, especially phantomJS. Give it time.  
-  
-To run all of the grunt tasks, run "grunt watch" in your terminal.
+### Grunt package installation 
+First, make sure node, npm and grunt-cli are installed on your machine/vm.  
+Once they are, in your terminal, cd into the projects directory and enter the command:
+```
+npm install
+```
+Packages may take a while to install, especially phantomJS. Give it time.  
+Packages listed in the package.json file will be loaded into an node_modules directory.  
+**Please add the node_modules directory to the .gitignore file**
 
+### Running Grunt Tasks
+In this Gruntfile.js file, the default grunt task will run the "watch" task when you enter "grunt" into the terminal.
+```
+grunt.registerTask('default', ['watch']);
+```
 
-###SASS/SCSS###
-.scss files have the same syntax as regular .css files.  
-.sass is similar but doesn't require {} or ;  
-**Please use .scss**
-
-**Separate elements into multiple .scss files.**   
-Such as one for the hamburger, one for the main-nav, one for the mobile-nav, one for the lightbox, one for the home-hero, one for the subpage-hero, on for typography, one for the grid...  
-Separated files that need to be imported must be prefixed with "_", for example:  
-_hamburger.scss  
-Then, in the layout.scss file, @import "filename" for all .scss files.  
-
-Only nest selectors by 2 times. 
-Compass's "Best Practices" : http://compass-style.org/help/tutorials/best_practices/
+To run another command at anytime, you may enter it in the terminal. Ex:
+```
+grunt jshint
+```

@@ -14,10 +14,14 @@
 		@include opacity(1);
 	}
 
-	#close {
-		display: block;
-		color: white;
-		text-align: center;
+	.wrapper {
+		position: relative;
+	}
+
+	.close {
+		position: absolute;
+		top: 1em;
+		right: 1em;
 	}
 }
 

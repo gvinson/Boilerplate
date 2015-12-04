@@ -1,0 +1,10 @@
+[class*="icon-"] {
+	@include inline-block;
+	vertical-align: middle;
+	@include background-size(contain);
+}
+
+.icon-close {
+	width: 1em;
+	height: 1em;
+}
