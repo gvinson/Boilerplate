@@ -48,7 +48,7 @@ var Response = {
 var Forms = {
 
 	init : function() {
-		$('form.ajax input[type="submit"]').on('click', this.validate);
+		$('form.ajax input[type="submit"]').on('click touchend', this.validate);
 		$('form.ajax').on('submit', this.submitForm);
 	},
 

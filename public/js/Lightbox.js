@@ -18,8 +18,8 @@ var Lightbox = {
 	wrapper : $('.lightbox-wrapper'),
 
 	init : function() {
-		Lightbox.links.on('click', this.openLightbox); 
-		Lightbox.close.on('click', this.closeLightbox);
+		Lightbox.links.on('click touchend', this.openLightbox); 
+		Lightbox.close.on('click touchend', this.closeLightbox);
 	},
 
 	openLightbox : function(e) {

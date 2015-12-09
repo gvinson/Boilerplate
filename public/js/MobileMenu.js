@@ -28,7 +28,7 @@ var MobileMenu = {
 	},
 
 	setEventListeners : function() {
-		MobileMenu.hamburger.on('click touchstart', this.showMenu);
+		MobileMenu.hamburger.on('click touchend', this.showMenu);
 	},
 
 	showMenu : function(e) {
